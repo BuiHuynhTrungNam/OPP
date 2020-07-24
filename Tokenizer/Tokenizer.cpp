@@ -41,10 +41,15 @@ void Tokenizer::sort(vector <int> &A)
 		}
 	}
 }
-void Tokenizer::findMinMax(vector <int> A)
+vector <int> Tokenizer::getBiggestNumber(vector<int> a, int number)
 {
-	cout << "The smallest number : " << A[0] << endl;
-	cout << "The biggest number : ";
-	for (int i = A.size() - 1; i > A.size() - 4; i--)
-		cout << A[i] << " ";
+	vector <int> result;
+	for (int i = a.size() - 1; i > a.size() - number-1; i--) result.push_back(a[i]);
+	return result;
+}
+vector<int> Tokenizer::getSmallestNumber(vector<int> a, int number)
+{
+	vector<int>result;
+	for (int i = 0; i < number; i++)	result.push_back(a[i]);
+	return result;
 }
